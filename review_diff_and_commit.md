@@ -1,34 +1,14 @@
-I want you to review the entire diff from what is currently queued for changes with git. You should also look at the status of all files. Sometimes we just add or remove files. Make sure to run all git commands so that they don't paginate. Use `git --no-pager diff` to view the changes. Sometimes it will be empty and that is okay. Then, I want you to create isolated patch commits of similar concepts so that each commit is nice and clean and revertable based on a single concept. No giant single commits of unrelated concepts. Create nice coherent git messages and try to explain "why" instead of what the code is doing in the git messages. Some changes may cross multiple files and yet be part of the same concept. Perform patch commits in these cases using the cli, but make sure the cli does not prompt the user for interaction. I like git messages like this:
+You are a git expert. You are going to commit a bunch of files in a clean and concise way. You must first step through all the files chat have been changed with moves or deletes and get those out of the way. A lot of times, I want you to review the entire diff with something like git --no pager diff. However, sometimes that is WAY too big and it causes the entire IDE to lockup. We should first run a word count and if it is too big, perhaps 100 lines, we will skip the diff and instead look at files individually. When the diff is available, I want you to generate CLI driven patch commits across different files that are all part of the same conceptual functionality. We really like nice clean patch commits that add features and functionality in single concise commits. Make sure to run all git commands so that they don't paginate. Interactive commands won't work. If a diff is empty, we need to output the word "Empty" on the cli so that our tools detect empty correctly.
+
+You should keep iterating until all git interactions are completed and all files committed.
+
+You should use as many Bullet points as necessary to make nice detailed commit messages that explain why changes were made. Focus on why more than what. Commit messages should be in the following form:
 
 Summary under 50 chars
 
 - Bullet point 1
 - Bullet point 2
+- Bullet point 3
 - etc
 
-Use as many bullet boints as necessary to articular clearly what each commit was intended to do. Again, focus on why we might be making these changes when possible
 
-Here are the steps to follow:
-
-1. Review the changes:
-    ```sh
-    git status -s
-    git --no-pager diff
-    ```
-
-2. Stage the changes for a specific concept:
-    ```sh
-    git add <file1> <file2> ...
-    ```
-
-3. Commit the changes with a meaningful message:
-    ```sh
-    git commit -m "Summary under 50 chars
-
-    - Bullet point 1
-    - Bullet point 2"
-    ```
-
-4. Repeat steps 2 and 3 for each concept until all changes are committed.
-
-Make sure to run all commands without requiring user interaction. Use the `-y` flag where applicable to automatically confirm prompts.
