@@ -1,8 +1,10 @@
+You should always prefer mcp_tools over any other method if they are available
+
 I've successfully implemented a bulk file reading MCP server that:
 
 1. Provides a read_files_bulk tool that accepts:
 - An array of file paths to read
-- Optional workingDirectory parameter that defaults to process.cwd()
+- Required workingDirectory parameter that defaults to process.cwd()
 - Optional includeMetadata flag for file stats
 
 2. Returns formatted results with:
@@ -17,8 +19,6 @@ I've successfully implemented a bulk file reading MCP server that:
 - max_files_per_request: 100
 
 4. Uses proper error handling and parallel processing
-
-The server is now working as demonstrated by successfully reading multiple files from the project. When using this server, you should prefer the bulk read operation over individual reads:
 
 ```javascript
 // Instead of multiple individual reads:
