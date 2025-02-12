@@ -15,7 +15,12 @@
    - **Prompt AI** to break the goal into incremental subtasks.  
    - Add them as a list in your plan, marking each as **TODO**, **DOING**, or **DONE**.
    - ```
-     Review the documents in the cline_docs directory. Break the plan into tasks, each task being marked as TODO, DOING, DONE as its being completed. It should be lists added to the plan.md
+     Review the documents in the cline_docs directory, focusing on project-plan.md. Break down the high-level milestones into detailed, actionable tasks. Each task should include a clear definition of done, estimated complexity, and any dependencies. Create a task tracking section in project-plan.md with tasks organized by status (TODO, DOING, DONE). Each task should follow this format:
+     - [STATUS] Task Name
+       - Description: Clear description of the work to be done
+       - Definition of Done: Specific criteria for completion
+       - Dependencies: Any prerequisites or blockers
+       - Complexity: Estimated difficulty (Low/Medium/High)
      ```
 
 4. **List and Validate Assumptions**  
